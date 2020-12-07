@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="container" id="todolist">
+        <header>
+            <h1 class="title">To-do-list</h1>
+        </header>
+
+        <main id="main-content">
+            <input type="text" placeholder="Thêm công việc" v-model="inputValue" v-on:keyup.enter="add" />
+            <ul class="list">
+                <li v-for="(list, index) in lists" class="flex">
+                    <span>{{ index+1 }}. {{ list }}</span>
+                    <button v-on:click="remove(index)">x</button>
+                </li>
+            </ul>
+            <p class="flex">
+
+                <span class="item">Có <b>{{ lists.length }}</b> công việc.</span>
+                <span class="item"><a v-on:click="removeAll">Xóa</a></span>
+            </p>
+
+        </main>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#todolist",
+            data: {
+                lists: ['Viết code', 'Ăn', 'Ngủ', 'Đi chơi'],
+                inputValue: ''
+            },
+            methods: {
+                add: function() {
+                    // console.log(this.inputValue)
+                    this.lists.push(this.inputValue)
+                    this.inputValue = ''
+                },
+                remove: function(myIndex) {
+                    // console.log('Đã click' + myIndex)
+                    this.lists.splice(myIndex, 1)
+                },
+                removeAll: function() {
+                    this.lists.splice(0, this.lists.length)
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
