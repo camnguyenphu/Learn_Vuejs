@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitioning-Single-Elements-Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+
+<body>
+
+    <div id="demo">
+        <button v-on:click="show = !show">
+          Toggle
+        </button>
+        <transition name="bounce">
+            <p v-if="show">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem consequuntur nulla, veniam accusamus dolorum nihil doloremque? Suscipit earum ullam pariatur dolor obcaecati odio facilis animi aspernatur, laboriosam possimus iste deserunt, totam
+                veritatis. Rem, perferendis sit tenetur rerum doloremque perspiciatis inventore fugiat magni aliquam labore voluptatum minima commodi corporis nulla officiis totam, eos autem debitis? Libero quisquam rerum explicabo similique, neque tenetur
+                recusandae illo harum, quod eveniet soluta, pariatur quibusdam? Quibusdam eaque id aut, quia vitae sit eius asperiores assumenda veniam blanditiis repellendus quidem harum sint! Perferendis necessitatibus repudiandae assumenda optio est
+                similique officiis ipsum nisi hic suscipit? Deleniti suscipit qui officia rem excepturi nihil praesentium nisi tempora hic, dignissimos omnis mollitia at, laborum quae? Fuga nam praesentium error rerum aspernatur deserunt aperiam ab saepe
+                illum, repudiandae veritatis aut explicabo suscipit quod corporis laudantium deleniti excepturi, officiis magnam! Dignissimos nesciunt blanditiis quisquam repellat atque laboriosam temporibus facere ducimus cumque, tempora ex aut adipisci
+                doloribus, quaerat similique nemo deleniti? Corrupti culpa perspiciatis cumque vel impedit nihil ullam voluptatum maiores commodi, labore distinctio. Nisi, voluptatibus unde delectus debitis quaerat corrupti dolores perspiciatis? Molestias
+                ducimus ex nam dolorum. Dolorem, eius! Veniam ipsam odio voluptatem itaque minima id repellendus obcaecati totam, sed aliquid quaerat tempora.
+            </p>
+        </transition>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
